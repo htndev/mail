@@ -1,0 +1,6 @@
+<mj-section>
+  <mj-column>
+    <mj-divider width="100%" />
+    <mj-button href="{url}" font-size="12px" padding-top="24px" padding-bottom="24px" color="#7f8c8d" background-color="transparent" align="center">{{joinUs}}</mj-button>
+  </mj-column>
+</mj-section>

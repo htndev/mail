@@ -1,0 +1,19 @@
+<mjml>
+  <mj-body background-color="#ecf0f1">
+    <mj-include path="../common/header.mjml"></mj-include>
+    <mj-section padding-top="0" padding-bottom="0">
+      <mj-column>
+        <mj-text font-size="20px" color="#363e4e" font-weight="700">{{headerTitle}}</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text font-size="18px">{{greet}}</mj-text>
+        <mj-text font-size="16px">{{fewSeconds}}</mj-text>
+        <mj-text font-size="16px">{{lastStep}}</mj-text>
+        <mj-button background-color="#363e4e" color="#fff" font-size="14px" href="{{url}}">{{confirmEmail}}</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-include path="../common/footer.mjml"></mj-include>
+  </mj-body>
+</mjml>

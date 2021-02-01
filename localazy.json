@@ -1,0 +1,11 @@
+{
+  "writeKey": "a8772581323590577312-352d4b632e2f8920265c6769b617efeb41232d6cf85adf4541c6634c41fb2c1a",
+  "readKey": "a8772581323590577312-be16ed6a4da06c3bab6d25f54837df1f49be28ab523f96349c9654cceadbec98",
+  "upload": {
+    "type": "json",
+    "files": "src/i18n/en.json"
+  },
+  "download": {
+    "files": "src/i18n/${lang}.json"
+  }
+}

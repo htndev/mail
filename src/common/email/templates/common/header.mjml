@@ -1,0 +1,6 @@
+<mj-section>
+  <mj-column>
+    <mj-image align="left" width="70px" src="https://i.imgur.com/Kc2X8oo.png"></mj-image>
+    <mj-divider border-color="#363e4e"></mj-divider>
+  </mj-column>
+</mj-section>

@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch - Debug",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["start:debug"],
+      "port": 9229,
+      "timeout": 20000,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std"
+    }
+  ]
+}
