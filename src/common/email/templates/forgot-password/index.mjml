@@ -10,9 +10,9 @@
     <mj-section>
       <mj-column>
         <mj-text font-size="18px">{{greet}}</mj-text>
-        <mj-text font-size="16px">{{fewSeconds}}</mj-text>
-        <mj-text font-size="16px">{{lastStep}}</mj-text>
-        <mj-button background-color="#363e4e" color="#fff" font-size="14px" href="{{url}}">{{confirmEmail}}</mj-button>
+        <mj-text font-size="16px">{{instruction}}</mj-text>
+        <mj-text font-weight="700">{{warning}}</mj-text>
+        <mj-button background-color="#363e4e" color="#fff" font-size="14px" href="{{url}}">{{reset}}</mj-button>
       </mj-column>
     </mj-section>
     <mj-include path="../common/footer.mjml"></mj-include>

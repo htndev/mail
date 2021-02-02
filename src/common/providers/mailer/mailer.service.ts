@@ -5,7 +5,7 @@ import { v4 as uuidGenerator } from 'uuid';
 
 import { Email } from '../../types/email.type';
 import { EmailConfig } from '../config/email.config';
-import { EmailRepository } from './../../../repositories/email.repository';
+import { EmailRepository } from '../../../repositories/email.repository';
 
 const { OAuth2 } = google.auth;
 

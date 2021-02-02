@@ -10,5 +10,6 @@ export interface Email {
 }
 
 export enum EmailType {
-  ConfirmEmail = 'confirm-email'
+  ConfirmEmail = 'confirm-email',
+  ForgotPassword = 'forgot-password'
 }

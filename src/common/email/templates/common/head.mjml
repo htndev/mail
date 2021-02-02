@@ -1,0 +1,7 @@
+<mj-head>
+  <mj-style inline="inline">
+    div {
+      line-height: 1.5 !important;
+    }
+  </mj-style>
+</mj-head>
