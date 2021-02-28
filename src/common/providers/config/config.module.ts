@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-
+import { AppConfig, DatabaseConfig } from '@xbeat/server-toolkit';
 import { AmqpConfig } from './amqp.config';
-import { AppConfig } from './app.config';
-import { DatabaseConfig } from './database.config';
 import { EmailConfig } from './email.config';
 
+const CONFIGS = [AppConfig, AmqpConfig, DatabaseConfig, EmailConfig];
+
 @Module({
-  providers: [AppConfig, AmqpConfig, DatabaseConfig, EmailConfig],
-  exports: [AppConfig, AmqpConfig, DatabaseConfig, EmailConfig]
+  providers: CONFIGS,
+  exports: CONFIGS
 })
 export class ConfigModule {}

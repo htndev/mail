@@ -1,21 +1,20 @@
-import { join } from 'path';
-import { I18nModule } from './common/providers/i18n/i18n.module';
 import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
 import { Module } from '@nestjs/common';
 import { ConfigModule as EnvModule } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { DatabaseConfig, NodeEnvironment } from '@xbeat/server-toolkit';
+import { join } from 'path';
 
-import { NodeEnv } from './common/constants/env.constant';
 import { AmqpConfig } from './common/providers/config/amqp.config';
 import { ConfigModule } from './common/providers/config/config.module';
-import { DatabaseConfig } from './common/providers/config/database.config';
+import { I18nModule } from './common/providers/i18n/i18n.module';
 import { SubscriptionModule } from './subscriptions/subscription.module';
 
 @Module({
   imports: [
     EnvModule.forRoot({
       envFilePath: '.dev.env',
-      ignoreEnvFile: process.env.NODE_ENV === NodeEnv.PRODUCTION
+      ignoreEnvFile: process.env.NODE_ENV === NodeEnvironment.PRODUCTION
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

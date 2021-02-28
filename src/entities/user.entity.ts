@@ -1,7 +1,6 @@
+import { EnhancedBaseEntity } from '@xbeat/server-toolkit';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Email } from './email.entity';
-
-import { EnhancedBaseEntity } from './enhanced-base.entity';
 
 @Entity({ name: 'users', synchronize: false })
 export class User extends EnhancedBaseEntity {

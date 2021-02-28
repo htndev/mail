@@ -1,8 +1,8 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { AppConfig } from '@xbeat/server-toolkit';
 
 import { AppModule } from './app.module';
-import { AppConfig } from './common/providers/config/app.config';
 
 async function bootstrap() {
   const logger = new Logger('Bootstrap');
