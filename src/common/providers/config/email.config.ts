@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
+import { BaseConfig } from '@xbeat/server-toolkit';
 import * as Joi from 'joi';
-
-import { BaseConfig } from './base.config';
 
 interface EmailConfigProps {
   EMAIL_CLIENT_ID: string;
