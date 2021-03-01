@@ -3,8 +3,7 @@
 /node_modules
 
 # Localization
-src/i18n
-src/i18n/*
+src/i18n/*.json
 !src/common/i18n
 
 # Logs
