@@ -1,4 +1,4 @@
-import { RabbitSubscribe } from '@golevelup/nestjs-rabbitmq';
+import { AmqpConnection, MessageOptions, Nack, RabbitSubscribe } from '@golevelup/nestjs-rabbitmq';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -18,7 +18,8 @@ export class ConfirmAccountSubscription implements BaseSubscription {
     private readonly mailerService: MailerService,
     private readonly i18n: I18nService,
     private readonly templateService: TemplateService,
-    @InjectRepository(UserRepository) private readonly userRepository: UserRepository
+    @InjectRepository(UserRepository) private readonly userRepository: UserRepository,
+    private readonly amqpConnection: AmqpConnection
   ) {}
 
   @RabbitSubscribe({
@@ -50,13 +51,18 @@ export class ConfirmAccountSubscription implements BaseSubscription {
       url
     });
 
-    this.mailerService.sendMail({
-      to: email,
-      subject: this.i18n.t('sign-up.subject', lang, [user.username]),
-      body,
-      type: EmailType.ConfirmEmail,
-      user,
-      uuid
-    });
+    try {
+      this.mailerService.sendMail({
+        to: email,
+        subject: this.i18n.t('sign-up.subject', lang, [user.username]),
+        body,
+        type: EmailType.ConfirmEmail,
+        user,
+        uuid
+      });
+      return new Nack();
+    } catch (e) {
+      return new Nack(true);
+    }
   }
 }
